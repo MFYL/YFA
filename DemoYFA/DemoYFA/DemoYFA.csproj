@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A54EB21-805D-47C8-97F0-095DD8B375E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HMITest</RootNamespace>
+    <AssemblyName>DemoYPLC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="YFA, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\YFA.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormChildPLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChildPLC.Designer.cs">
+      <DependentUpon>FormChildPLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChild报警.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChild报警.Designer.cs">
+      <DependentUpon>FormChild报警.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChild按钮.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChild按钮.Designer.cs">
+      <DependentUpon>FormChild按钮.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChild数值.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChild数值.Designer.cs">
+      <DependentUpon>FormChild数值.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDlg.Designer.cs">
+      <DependentUpon>FormDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWnd.Designer.cs">
+      <DependentUpon>MainWnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserFB.cs" />
+    <EmbeddedResource Include="FormChildPLC.resx">
+      <DependentUpon>FormChildPLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChild报警.resx">
+      <DependentUpon>FormChild报警.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChild按钮.resx">
+      <DependentUpon>FormChild按钮.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChild数值.resx">
+      <DependentUpon>FormChild数值.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDlg.resx">
+      <DependentUpon>FormDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWnd.resx">
+      <DependentUpon>MainWnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
